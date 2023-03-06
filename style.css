@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --text-color: #323238;
+
+  --bg-default-climate-color: #e1e1e6;
+  --img-default-climate-color: #323238;
+
+  --bg-focus-climate-color: #02799d;
+  --img-focus-clicame-color: #fff;
+}
+
+button {
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  display: flex;
+  gap: 19.2rem;
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  animation: fromleft 1.5s 500ms backwards;
+}
+
+#timer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.6rem;
+
+  display: flex;
+  color: var(--text-color);
+
+  margin-bottom: 1.7rem;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4rem;
+}
+
+#climate {
+  display: grid;
+  grid-gap: 3.2rem;
+  grid-template-areas:
+    'A B'
+    'C D';
+  animation: fromright 1.5s 500ms backwards;
+}
+
+.defaultButtonForest svg path,
+.defaultButtonRain svg path,
+.defaultButtonCoffeeshop svg path,
+.defaultButtonFireplace svg path {
+  fill: var(--bg-default-climate-color);
+}
+
+.defaultButtonForest svg path + path,
+.defaultButtonRain svg path + path,
+.defaultButtonCoffeeshop svg path + path,
+.defaultButtonFireplace svg path + path {
+  fill: var(--img-default-climate-color);
+}
+
+.focusButtonForest svg path,
+.focusButtonRain svg path,
+.focusButtonCoffeeshop svg path,
+.focusButtonFireplace svg path {
+  fill: var(--bg-focus-climate-color);
+}
+
+.focusButtonForest svg path + path,
+.focusButtonRain svg path + path,
+.focusButtonCoffeeshop svg path + path,
+.focusButtonFireplace svg path + path {
+  fill: var(--img-focus-clicame-color);
+}
+
+.hide {
+  display: none;
+}
+
+.forest {
+  grid-area: A;
+}
+
+.rain {
+  grid-area: B;
+}
+
+.coffeShop {
+  grid-area: C;
+}
+
+.fireplace {
+  grid-area: D;
+}
+
+@media (max-width: 1080px) {
+  .container {
+    display: grid;
+    grid-gap: 1rem;
+  }
+}
+
+@media (max-height: 560px) {
+  #timer {
+    font-size: 7rem;
+    justify-content: center;
+  }
+
+  #controls {
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  #controls svg {
+    width: 3rem;
+  }
+
+  #climate svg {
+    width: 7rem;
+    height: fit-content;
+  }
+}
+
+@keyframes fromright {
+  0% {
+    transform: translateX(5rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fromleft {
+  0% {
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
