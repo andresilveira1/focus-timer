@@ -13,7 +13,7 @@
   --img-default-climate-color: #323238;
 
   --bg-focus-climate-color: #02799d;
-  --img-focus-clicame-color: #fff;
+  --img-focus-climate-color: #fff;
 }
 
 button {
@@ -93,27 +93,11 @@ main {
 .focusButtonRain svg path + path,
 .focusButtonCoffeeshop svg path + path,
 .focusButtonFireplace svg path + path {
-  fill: var(--img-focus-clicame-color);
+  fill: var(--img-focus-climate-color);
 }
 
 .hide {
   display: none;
-}
-
-.forest {
-  grid-area: A;
-}
-
-.rain {
-  grid-area: B;
-}
-
-.coffeShop {
-  grid-area: C;
-}
-
-.fireplace {
-  grid-area: D;
 }
 
 @media (max-width: 1080px) {
